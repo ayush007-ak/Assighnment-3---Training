@@ -1,0 +1,229 @@
+
+1-  Replace a character a with e in following string without using inbuilt method.
+
+  Halo
+
+package com.yash.string;
+
+public class StrMethod {
+	
+	public static void main(String args[]) {
+		String str = "Halo";
+		System.out.println("testt"+str);
+		str = str.replace('a', 'e');
+		System.out.println(str);
+	}
+
+}
+
+
+
+
+
+
+2. Write a code to mask a given string.
+
+package com.yash.string;
+
+public class Masking {
+	public static void main(String args[]) {
+		String str = "Ayush khaskalam";
+		String[] arr = str.split(" ");
+		int n = arr.length;
+		String Pr = "";
+		
+		for(int i=0; i<n; i++) {
+			for(int j=0; j<arr[i].length();j++) {
+				if(j>2 && j<arr[i].length())
+				{
+					Pr += "X";
+				}
+				else
+				{
+					char b=arr[i].charAt(j);
+					Pr += b;
+				}
+			}
+		}
+		System.out.println(Pr);
+	}
+
+}
+
+
+
+3.  Check if given string starts with A and Endwith t.
+
+
+
+package com.yash.string;
+
+public class StartEnd {
+	
+	public static void main(String args[]){  
+		String s1="ayushkhaskalam";  
+		System.out.println(s1.endsWith("m"));  
+		System.out.println(s1.startsWith("a"));  
+		}}  
+
+
+
+
+4.  Create a class Student with following attributes
+   
+   Student
+ =============
+   rollNo int
+   studentFirstName String
+   studentLastName  String
+   studentAge int
+
+package com.yash.string;
+//Parent class
+public class EntitiesAttributes {
+	
+	
+		
+		
+		public int rollNo ;
+		public String studentFirstName;
+		public String  studentLastName;
+	    public int studentAge;
+		
+	
+	
+	
+	public EntitiesAttributes(int rollNo , String studentFirstName , String studentLastName , int studentAge) {
+		this.rollNo = rollNo;
+		this.studentFirstName = studentFirstName;
+		this.studentLastName = studentLastName;
+		this.studentAge = studentAge;
+	}
+
+
+
+
+	public int getRollNo() {
+		return rollNo;
+	}
+
+
+
+
+	public void setRollNo(int rollNo) {
+		this.rollNo = rollNo;
+	}
+
+
+
+
+	public String getStudentFirstName() {
+		return studentFirstName;
+	}
+
+
+
+
+	public void setStudentFirstName(String studentFirstName) {
+		this.studentFirstName = studentFirstName;
+	}
+
+
+
+
+	public String getStudentLastName() {
+		return studentLastName;
+	}
+
+
+
+
+	public void setStudentLastName(String studentLastName) {
+		this.studentLastName = studentLastName;
+	}
+
+
+
+
+	public int getStudentAge() {
+		return studentAge;
+	}
+
+
+
+
+	public void setStudentAge(int studentAge) {
+		this.studentAge = studentAge;
+	}
+	
+
+}
+
+
+//child class
+
+package com.yash.string;
+
+public class Student extends EntitiesAttributes {
+	
+	
+
+	
+	
+	public Student(int rollNo , String studentFirstName , String studentLastName , int studentAge) {
+		super(rollNo,studentFirstName,studentLastName,studentAge);
+	}
+	
+	
+	public String toString() {
+		return rollNo + " : " + studentAge;
+	}
+
+}
+
+
+//main class
+
+package com.yash.string;
+
+import java.util.HashSet;
+
+public class Compare {
+	
+	public static void main(String args[]) {
+		
+		
+		Student a = new Student(23,"ayush","khaskalam",28);
+		Student b = new Student(23,"ayush","khaskalam",28);
+		
+		System.out.println(a);
+		//System.out.println(b);
+		
+		if(a.equals(b)) {
+			System.out.println("Oject are same");
+			
+		}else {
+			System.out.println("Object are not  Same");
+		}
+		
+		HashSet <Student> studentSet = new HashSet <Student> ();
+		for(Student std :studentSet) {
+			System.out.println("rollNo" +   std.getRollNo());
+		}
+		
+		
+		if(a.hashCode() == b.hashCode()) {
+			System.out.println(a.equals(b));
+		}else {
+			System.out.println("Not equal");
+		}
+	}
+
+
+
+
+
+
+
+
+
